@@ -82,6 +82,7 @@ var advance = function (event) {
         else {
             buttonEl.style.display = "none";
             questionEl.textContent = "Good Job! " + "You have scored a " + score + "/" + questions.length + "!";
+            cursor++;
         }
     }
 }
@@ -91,7 +92,10 @@ function Timer(){
     var interval = setInterval(function(){
         timeleft--;
         timeEl.textContent = "Time: " + timeleft;
-        if(timeleft == 0) {
+        if(timeleft == 0 ) {
+            clearInterval(interval);
+        }
+        if(cursor == questions.length){
             clearInterval(interval);
         }
     }, 100)
