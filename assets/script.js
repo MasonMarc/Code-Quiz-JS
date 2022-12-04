@@ -79,7 +79,7 @@ var advance = function (event) {
         }
         else {
             buttonEl.style.display = "none";
-            questionEl.textContent = "Good Job!" + "You have scored a " + score + "/" + questions.length + "!";
+            questionEl.textContent = "Good Job! " + "You have scored a " + score + "/" + questions.length + "!";
         }
     }
 }

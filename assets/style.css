@@ -6,10 +6,29 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
+.wrapper{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2em;
+}
 
 button {
-    margin: auto;
+    margin: 0.3em;
     background-color:  lightskyblue;
     color: black;
     padding: 1em;
+    border-radius: 7%;
+    width: 10em;
+    font-size: 1em;
+}
+
+.possible{
+    display: flex;
+    flex-flow: column wrap;
 }
