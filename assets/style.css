@@ -1,0 +1,14 @@
+body {
+    padding: 10em;
+    margin: auto;
+    color: brown;
+    background-color: antiquewhite;
+
+}
+
+button {
+    margin: auto;
+    background-color:  lightskyblue;
+    color: black;
+    padding: 1em;
+}
