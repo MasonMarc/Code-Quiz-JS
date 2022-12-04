@@ -1,5 +1,7 @@
 var questionEl = document.querySelector('.question');
 var buttonEl = document.querySelector('.possible');
+var timeEl = document.querySelector(".time");
+var timeleft = 100;
 var cursor = 0;
 var score = 0;
 
@@ -83,6 +85,19 @@ var advance = function (event) {
         }
     }
 }
+
+// TIMER ----------------------------
+function Timer(){
+    var interval = setInterval(function(){
+        timeleft--;
+        timeEl.textContent = "Time: " + timeleft;
+        if(timeleft == 0) {
+            clearInterval(interval);
+        }
+    }, 100)
+}
+Timer();
+// END TIMER ----------------------------------
 
 document.addEventListener('click', advance);
 
