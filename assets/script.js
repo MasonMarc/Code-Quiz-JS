@@ -1,7 +1,7 @@
 var questionEl = document.querySelector('.question');
 var buttonEl = document.querySelector('.possible');
 var cursor = 0;
-var score =0;
+var score = 0;
 
 
 var questions = [
@@ -66,11 +66,11 @@ var advance = function (event) {
     console.log(element);
     
     if (element.matches('button')) {
+        var answer = element.dataset.choice === correctAnswers[cursor];
+        if(answer){
+            score++;
+        }
         if (cursor < questions.length-1) {
-            var answer = element.dataset.choice === correctAnswers[cursor];
-            if(answer){
-                score++;
-            }
             console.log(answer);
             cursor++;
             console.log(cursor);
