@@ -52,6 +52,7 @@ var questions = [
 
 var correctAnswers = ["a", "b", "c", "d"];
 
+// Makes boxes display actual text of question object
 var displayQuestion = function () {
     questionEl.querySelector('h2').textContent = questions[cursor].text;
     buttonEl.querySelector('#a').textContent = questions[cursor].possible[0];
@@ -62,7 +63,9 @@ var displayQuestion = function () {
         return;
     }
 };
+// --------------------------------------
 
+// advance on button click function
 var advance = function (event) {
     var element = event.target;
     
@@ -89,6 +92,8 @@ var advance = function (event) {
     }
 }
 
+// ---------------------------------
+
 // TIMER ----------------------------
 function Timer(){
     var interval = setInterval(function(){
@@ -99,6 +104,11 @@ function Timer(){
         }
         if(cursor == questions.length){
             clearInterval(interval);
+        }
+        // If time ends, game ends
+        if (timeleft ==0){
+            buttonEl.style.display = "none";
+            questionEl.textContent = "Out of Time! " + "You have scored a " + score + "/" + questions.length + "!";
         }
     }, 100)
 }
