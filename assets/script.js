@@ -1,6 +1,7 @@
 var questionEl = document.querySelector('.question');
 var buttonEl = document.querySelector('.possible');
 var timeEl = document.querySelector(".time");
+var resultEl = document.querySelector(".result");
 var timeleft = 100;
 var cursor = 0;
 var score = 0;
@@ -77,6 +78,7 @@ var advance = function (event) {
             cursor++;
             console.log(cursor);
             console.log(score);
+            resultEl.textContent = "That was " + answer;
             displayQuestion();
         }
         else {
