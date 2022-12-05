@@ -36,3 +36,9 @@ button {
 #time{
     float: right;
 }
+
+a{
+    border: solid dodgerblue;
+    padding: 1em;
+    background-color: aliceblue;
+}

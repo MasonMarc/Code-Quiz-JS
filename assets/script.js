@@ -75,6 +75,8 @@ var advance = function (event) {
         var answer = element.dataset.choice === correctAnswers[cursor];
         if(answer){
             score++;
+        } else{
+            timeleft = timeleft-20;
         }
         if (cursor < questions.length-1) {
             console.log(answer);
@@ -88,6 +90,10 @@ var advance = function (event) {
             buttonEl.style.display = "none";
             questionEl.textContent = "Good Job! " + "You have scored a " + score + "/" + questions.length + "!";
             cursor++;
+            // save initial and score in local
+            var initials = prompt("Enter your Initials to be saved ini the high scores:");
+            localStorage.setItem('Initials', initials);
+            localStorage.setItem('Score', score);
         }
     }
 }
@@ -99,14 +105,15 @@ function Timer(){
     var interval = setInterval(function(){
         timeleft--;
         timeEl.textContent = "Time: " + timeleft;
-        if(timeleft == 0 ) {
+        if(timeleft == 0 || timeleft<0) {
+            timeleft == 0;
             clearInterval(interval);
         }
         if(cursor == questions.length){
             clearInterval(interval);
         }
         // If time ends, game ends
-        if (timeleft ==0){
+        if (timeleft ==0 ||timeleft <0){
             buttonEl.style.display = "none";
             questionEl.textContent = "Out of Time! " + "You have scored a " + score + "/" + questions.length + "!";
         }
@@ -114,6 +121,22 @@ function Timer(){
 }
 Timer();
 // END TIMER ----------------------------------
+
+
+// HIGH SCORE ------------------
+var highEl = document.getElementById('highscore');
+function highscore(){
+    alert("User: " + localStorage.getItem('Initials') + " Score: " + localStorage.getItem('Score'));
+}
+highEl.addEventListener('click', highscore);
+// END HIGH SCORE -----------------
+
+// START PAGE  -----------------
+// make html elements outside of wrapper that has button and header such that when you hit the button the new elements are hidden and the wrapper is shown and timer function and display question are run
+
+// START PAGE END ----------------
+
+
 
 document.addEventListener('click', advance);
 
