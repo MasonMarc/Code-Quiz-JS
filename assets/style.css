@@ -1,8 +1,8 @@
 body {
     padding: 10em;
     margin: auto;
-    color: brown;
-    background-color: antiquewhite;
+    color: #A88C93;
+    background-color: #F5E5E9;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
@@ -20,8 +20,8 @@ h2{
 
 button {
     margin: 0.3em;
-    background-color:  lightskyblue;
-    color: black;
+    background-color:  #7BA881;
+    color: #E4F5E6;
     padding: 1em;
     border-radius: 7%;
     width: 10em;
@@ -38,7 +38,9 @@ button {
 }
 
 a{
-    border: solid dodgerblue;
+    border: solid #7BA881;
     padding: 1em;
     background-color: aliceblue;
+    text-decoration: none;
+    color: #7BA881;
 }
